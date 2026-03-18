@@ -1,5 +1,3 @@
-# lol-comeback-predictor
-Utilizes data from professional League of Legends tournaments to train a model that predicts how likely a team can achieve a comeback win. Data Science project for DSC 80 @ UCSD.
 
 # Introduction
 
@@ -12,4 +10,19 @@ League of Legends is one of the most popular video games in the world and featur
 - **goldddiffat__**: Similar to goldat__, but instead represents the difference in gold between players of opposing teams. Therefore, it can take negative values.
 
 The primary question of interest for this project is **how likely is a team able to pull off a comeback victory**. For this project, the criteria for a comeback victory is that a team has to win the game after having a disadvantage in gold at 15 minutes. As the average League of Legends game is 30-45 minutes, and gold differential stops being tracked after 25 minutes, being behind in gold at 15 minutes means a team has been trailing their opponents for at least half of the game. 
+
+# Exploratory Data Analysis
+
+The full dataset contains a multitude of columns unimportant to this project, such as the time a game was played, the version it was played on, and whether or not it was a playoff game. The first step in data cleaning was to drop all of the rows that did not contain game data, since that is the focus for my project. In addition, columns designed for binary values had float datatypes instead of binary values. Below is the head of the cleaned dataframe. It will then be further cleaned and additional rows will be dropped for specific data analysis.
+
+| gameid             | teamname                |   result |   kills |   deaths |   assists |
+|:-------------------|:------------------------|---------:|--------:|---------:|----------:|
+| LOLTMNT03_179647   | IziDream                |        0 |       3 |       13 |         5 |
+| LOLTMNT06_96134    | Esprit Shōnen           |        1 |      21 |       11 |        53 |
+| LOLTMNT06_95160    | Karmine Corp Blue Stars |        0 |      18 |       22 |        30 |
+| LOLTMNT03_178705   | Zerance                 |        0 |       3 |       18 |         4 |
+| 11715-11715_game_1 | Weibo Gaming            |        1 |      17 |        5 |        33 |
+
+
+
 
